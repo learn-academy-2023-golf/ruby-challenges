@@ -68,7 +68,7 @@ class Animal
 
     def die_if_old
         @alive = false
-        puts "This animal has died peacefully after a full and happy life."
+        puts "This animal has died peacefully at the age of #{max_age}, after a full and happy life."
     end
 
     def max_age
@@ -137,7 +137,7 @@ class CustomMammal < Mammal
     end 
 
     def information
-        super + "Its a #{@name} and makes the sound: #{@sound}."
+        super + ". Its a #{@name} and makes the sound #{@sound}."
     end
 end
 
