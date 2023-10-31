@@ -143,7 +143,8 @@ end
 
 salmon = Salmon.new("Pacific")
 puts salmon.information
-salmon.age_up until salmon.age >= salmon.max_age
+salmon.age_up until salmon.age >= salmon.max_agels
+
 
 
 bear = Bear.new
