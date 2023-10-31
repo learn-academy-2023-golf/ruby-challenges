@@ -50,10 +50,40 @@ p laundry.show_status
 # For the following ColorPalette challenge use initialize and attr_accessor methods in your class.
 
 # As a developer, I can create a class called ColorPalette.
+
+class ColorPalette
+    attr_accessor :colors, :colors2, :colors3
+    def initialize(colors, colors2, colors3)
+        @colors = colors
+        @colors2 = colors2
+        @colors3 = colors3
+    end
+    def all_colors 
+        "#{colors}, #{colors2}, #{colors3}"
+    
+    end
+end
+
+
 # As a developer, I can create three instances (objects) of class ColorPalette.
+# red = ColorPalette.new
+# blue = ColorPalette.new
+# green = ColorPalette.new
+
 # e.g green = ColorPalette.new
 # As a developer, I can initialize each instance of the class ColorPalette with three colors.
+blue = ColorPalette.new('sky blue', 'royal blue', 'deep ocean blue')
+red = ColorPalette.new('ruby red', 'dark red', 'blood red')
+green = ColorPalette.new('forest green', 'lime green', 'avocado green')
+
 # e.g. green = ColorPalette.new('Chartreuse', 'Kelly', 'Seafoam')
 # As a developer, I can print the value of each individual color.
+p blue
+p red
+p green
 # As a developer, I can create a method called all_colors that when called will print a sentence telling me the three colors of a given palette.
+p blue.all_colors
+
 # As a developer, I can change one or more colors of a given palette.
+red.colors2 = 'cherry red'
+p red.all_colors
