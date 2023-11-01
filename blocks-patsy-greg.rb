@@ -1,3 +1,4 @@
+system("clear")
 # # ❤️ Challenges
 # # Create a loop that prints the numbers 1 to 20.
 # nums =1
