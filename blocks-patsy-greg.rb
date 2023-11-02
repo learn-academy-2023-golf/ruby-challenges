@@ -1,5 +1,7 @@
-# ❤️ Challenges
-# Create a loop that prints the numbers 1 to 20.
+system("clear")
+# # ❤️ Challenges
+# # Create a loop that prints the numbers 1 to 20.
+
 # nums =1
 # while nums <= 20 
 #     p nums
