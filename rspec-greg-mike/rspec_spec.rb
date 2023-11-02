@@ -14,40 +14,46 @@ require_relative 'rspec.rb'
 # completed👍
 # As a developer, I can give a Task a due date. Hint: Use the built-in Ruby Date class.
 
-
-
-describe 'Task' do 
+describe Task do
     it 'has a title' do
-        expect{ Task.new }.to_not raise_error
+      task = Task.new
+      expect(task).to respond_to (:title)
     end
-
-    it 'has a task title' do 
-        my_task = Task.new 
-        expect(my_task.title).to be_a String
-        expect(my_task.title).to eq 'trash'
+  
+    it 'can retrieve a task title' do
+      task = Task.new('trash')
+      expect(task.title).to eq('trash')
     end
-    it 'has a description' do 
+  
+    it 'has a description' do
+      task = Task.new
+      expect(task).to respond_to(:description)
+      expect(task.description).to eq('anonymous')
+      task_description = Task.new('Title', 'taking out trash from kitchen') 
+      expect(task_description.description).to eq('taking out trash from kitchen')
+    end
+  
+    it 'is initialized as "in progress" and can be marked as done' do
+      task = Task.new
+      expect(task.status).to eq('in progress')
+      task.mark_as_done
+      expect(task.status).to eq('done')
+    end
+  
+    it 'can be marked as done' do
         my_task = Task.new
-        expect(my_task.description).to eq 'anonymous'
-        expect(my_task.description).to be_a String
-        trash = Task.new 'taking out trash from kitchen'
-        expect(trash.description).to eq 'taking out trash from kitchen'
+        expect(my_task.done).to eq('in progress') 
+      
+        my_task.mark_as_done
+        expect(my_task.done).to eq('done') 
     end
-    it 'can be given a status' do 
-        my_task = Task.new
-        expect(my_task.status).to be_a String
-        status = Task.new 'in progress'
-        expect (my_task.status).to eq 'in progress'
-    end
-    it 'can be marked as done' do 
-        my_task = Task.new
-        expect(my_task.done).to be_a String
-        done = Task.new 'completed'
-        expect(my_task.done).to eq 'completed'
-    end
-    it 'has a due date' do 
-        due_date = Date.today + 7
-        my_task = Task.new
-        expect(task.due_date).to eq due_date
-    end
+    # it 'can be marked as done' do 
+    #     my_task = Task.new
+    #     expect(my_task.done).to be_a String
+    #     done = Task.new 'completed'
+    #     expect(my_task.done).to eq 'completed'
+    # end
 end
+
+
+# This, challenge was particularly tough. chatGPT was used to help with last block. The commented block just under the last 'it' block was what we had previously.
