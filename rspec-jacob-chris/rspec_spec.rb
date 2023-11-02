@@ -1,7 +1,3 @@
-require 'rspec'
-
-require_relative 'rspec.rb'
-
 describe 'Task' do
     it 'has to be real' do
         expect{ Task.new }.to_not raise_error
